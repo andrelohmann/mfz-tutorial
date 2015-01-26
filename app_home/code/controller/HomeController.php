@@ -10,6 +10,7 @@ class HomeController extends Page_Controller {
 	
 	private static $allowed_actions = array( 
 		'index',
+                'TourAddSearchForm',
 		'terms',
 		'privacy',
 		'contact',
@@ -54,7 +55,7 @@ class HomeController extends Page_Controller {
             $customisedController = $controller->customise(array(
                 "Title" => _t('Home.HOMETITLE', 'Home.HOMETITLE'),
                 "Content" => _t('Home.HOMECONTENT', 'Home.HOMECONTENT'),
-                "Form" => ''
+                "TourAddSearchForm" => $this->TourAddSearchForm()
             ));
             
             Requirements::css('app_home/css/home_index.css');
@@ -63,6 +64,10 @@ class HomeController extends Page_Controller {
                 array('Home_index', 'Home', 'Page', $this->stat('template_main'), 'BlankPage')
             );
 	}
+        
+        public function TourAddSearchForm(){
+            return TourAddSearchForm::create($this, "TourAddSearchForm");
+        }
 
 	/**
 	 * Show the "login" page

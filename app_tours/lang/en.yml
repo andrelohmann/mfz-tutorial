@@ -1,0 +1,22 @@
+en:
+  Tour:
+    # Tour Translations
+    STARTDATE: 'Date'
+    STARTDATEDESCRIPTION: 'Enter the date and time you want to start'
+    START: 'Start'
+    STARTDESCRIPTION: 'Enter your start location'
+    GOAL: 'Goal'
+    GOALDESCRIPTION: 'Enter your target location'
+    # HomePage Intro Text
+    INTROTEXT: 'Search or add roadtrips'
+    # Search Page
+    SEARCHTITLE: 'Connections available'
+    NOTOURSFOUND: 'No cennections available'
+    #Sarch Form
+    SEARCHMODALTITLE: 'Where do you want to go?'
+    STARTDATEDIFF: 'Allowed Timespan'
+    STARTRADIUS: 'Alloewd Distance from Start'
+    GOALRADIUS: 'Alloewd Distance from Goal'
+    
+  TourAddSearchForm:
+    ADDSUCCESS: 'Your tour has been added and will be visible for othert riders now.'
