@@ -4,7 +4,7 @@
  * @package some config
  * http://doc.silverstripe.org/framework/en/3.1/topics/controller
  */
-class TourController extends Page_Controller {
+class TourController extends Controller {
 	
 	private static $url_segment = 'tour';
 	
@@ -47,26 +47,14 @@ class TourController extends Page_Controller {
 	public function search() {
             
             // Vorerst keine Seite erstellt
-            $tmpPage = new Page();
-            $tmpPage->Title = _t('Tour.SEARCHTITLE', 'Tour.SEARCHTITLE');
-            $tmpPage->URLSegment = self::$url_segment;
-            $tmpPage->ID = -1;// Set the page ID to -1 so we dont get the top level pages as its children
-
-            $controller = Page_Controller::create($tmpPage);
-            $controller->init();
-            
-            $this->init();
-            
-            $Tours = new PaginatedList($this->Tours(), $this->request);
+            $Tours = new PaginatedList(self::searchresults(), $this->request);
             $Tours->setPageLength(10);
             
-            $customisedController = $controller->customise(array(
+            return $this->customise(new ArrayData(array(
                 "Title" => _t('Tour.SEARCHTITLE', 'Tour.SEARCHTITLE'),
                 "Tours" => $Tours,
                 "TourSearchForm" => $this->TourSearchForm()
-            ));
-            
-            return $customisedController->renderWith(
+            )))->renderWith(
                 array('Tour_search', 'Tour', 'Page', $this->stat('template_main'), 'BlankPage')
             );
 	}
@@ -80,7 +68,7 @@ class TourController extends Page_Controller {
          * 
          * @return boolean
          */
-        private function Tours() {
+        private static function searchresults() {
             // Build Query
             $StartBounce = GeoLocation::create_field('GeoLocation', Session::get('TourSearch.Start'), 'Start')->getSQLFilter(Session::get('TourSearch.StartRadius') ? Session::get('TourSearch.StartRadius') : TourSearchForm::$default_radius);
             $GoalBounce = GeoLocation::create_field('GeoLocation', Session::get('TourSearch.Goal'), 'Goal')->getSQLFilter(Session::get('TourSearch.GoalRadius') ? Session::get('TourSearch.GoalRadius') : TourSearchForm::$default_radius);
@@ -94,7 +82,7 @@ class TourController extends Page_Controller {
             $StartDateFilter = "'".$minDate."' < StartDate AND StartDate < '".$maxDate."'";
             
             $filter = $StartDateFilter . ' AND ' . $StartBounce . ' AND ' . $GoalBounce;
-            //var_dump($filter); die();
+            
             return Tour::get()->where($filter)->sort('StartDate');
         }
 }

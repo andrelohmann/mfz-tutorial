@@ -1,3 +1,12 @@
+# Version 0.3
+
+ * Updated to framework-only usage
+ * added all available modules
+
+# Version 0.2
+
+ * Build the basic application for adding and searching tours
+
 # Version 0.1
 
  * created the empty application from apptemplate
