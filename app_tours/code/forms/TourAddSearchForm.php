@@ -21,8 +21,8 @@ class TourAddSearchForm extends BootstrapHorizontalForm {
         $Goal->setRightTitle(_t('Tour.GOALDESCRIPTION','Tour.GOALDESCRIPTION'))->addExtraClass('input-lg');
         
         $actions = new FieldList(
-            $Search = BootstrapLoadingFormAction::create('doSearch')->setTitle('<span class="glyphicon glyphicon-search" aria-hidden="true"></span>'),
-            $Add = BootstrapLoadingFormAction::create('doAdd')->setTitle('<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>')
+            $Search = BootstrapLoadingFormAction::create('doSearch')->setButtonContent('<span class="glyphicon glyphicon-search" aria-hidden="true"></span>'),
+            $Add = BootstrapLoadingFormAction::create('doAdd')->setButtonContent('<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>')
         );
         
         $Search->addExtraClass('btn-info btn-lg btn-block');

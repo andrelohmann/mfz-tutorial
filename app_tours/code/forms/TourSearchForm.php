@@ -33,12 +33,12 @@ class TourSearchForm extends BootstrapHorizontalModalForm {
         
         
         $actions = new FieldList(
-            $Search = BootstrapLoadingFormAction::create('doSearch')->setTitle('<span class="glyphicon glyphicon-search" aria-hidden="true"></span>')
+            $Search = BootstrapLoadingFormAction::create('doSearch')->setButtonContent('<span class="glyphicon glyphicon-search" aria-hidden="true"></span>')
         );
         
         $Search->addExtraClass('btn-info btn-lg btn-block');
         
-        $ModalOpenButton = new BootstrapModalFormAction($Title = '<span class="glyphicon glyphicon-search" aria-hidden="true"></span>');
+        $ModalOpenButton = BootstrapModalFormAction::create('openModal')->setButtonContent($Title = '<span class="glyphicon glyphicon-search" aria-hidden="true"></span>');
         $ModalOpenButton->addExtraClass('btn-primary btn-lg btn-block');
          
         parent::__construct(
