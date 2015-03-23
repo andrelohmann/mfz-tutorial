@@ -10,13 +10,13 @@
         $MetaTags(false)
         <%-- Bootstrap --%>
         
-        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
         
         <!-- Optional theme -->
-        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootswatch/3.3.2/paper/bootstrap.min.css" />
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootswatch/3.3.4/paper/bootstrap.min.css" />
 
         <!-- http://daneden.github.io/animate.css/ -->
-        <link href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.1/animate.min.css" rel="stylesheet" />
+        <link href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.5/animate.min.css" rel="stylesheet" />
         <link href="{$ThemeDir}/css/animationdelay.css" rel="stylesheet" />
 
         <!-- http://fortawesome.github.io/Font-Awesome/ -->
@@ -125,7 +125,7 @@
         
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="https://code.jquery.com/jquery.js"></script>
-        <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     </head>
     <body>
         <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
