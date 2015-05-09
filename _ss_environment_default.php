@@ -43,6 +43,10 @@ define('SS_DEFAULT_ADMIN_PASSWORD', '__PASSWORD__');
 // if varnish stays in front and geoip is used, this variable will read the geolocation from x-forwarded-for
 //define('GEOIP_SERVER_VAR', 'HTTP_X_FORWARDED_FOR');
 
+// geoform needs a UDF (mysql user defined function) to be created
+// either create this function manually or on each /dev/build
+//define('GEOFORM_CREATE_GEODISTANCE_UDF', true);
+
 // Self Defined Variables
 // Admin Email Address (From)
 define('ADMIN_EMAIL','__EMAIL__');
@@ -95,6 +99,13 @@ define('TWITTER_CALLBACK_URL','YOUR_TWITTER_CALLBACK_URL'); // http://YOURDOMAIN
 define('TWITTER_SIGNUP_PATH','twitter/signup'); // change for custom signup page
 define('TWITTER_ERROR_PATH','twitter/error');
 
+define('INSTAGRAM_CLIENT_ID', 'YOUR_INSTAGRAM_CLIENT_ID');
+define('INSTAGRAM_CLIENT_SECRET', 'YOUR_INSTAGRAM_CLIENT_SECRET');
+define('INSTAGRAM_REDIRECT_URL', 'YOUR_INSTAGRAM_REDIRECT_URL');
+define('INSTAGRAM_SCOPE','YOUR_INSTAGRAM_SCOPE'); // basic
+define('INSTAGRAM_SIGNUP_PATH','instagram/signup'); // change for custom signup page
+define('INSTAGRAM_ERROR_PATH','instagram/error');
+
 // Session Extender
 define('SESSIONID','PHPSESSID');
 define('SESSIONLIFETIME',(60*60*2)); // two hours
@@ -108,3 +119,8 @@ define('SESSIONLIFETIME',(60*60*2)); // two hours
 // Google Maps API Key
 // If using one of the GeoLocation Fields and Requests to Google Maps Api exceeds the Number of free Requests
 //define('GOOGLE_MAPS_API_KEY', 'ABQIAAAAbnvDoAoYOSW2iqoXiGTpYBTIx7cuHpcaq3fYV4NM0BaZl8OxDxS9pQpgJkMv0RxjVl6cDGhDNERjaQ'); // Old API Key for Localhost
+
+// Benchmark Credentials
+// Set these Credentials as HTTP Header (HTTP_BENCHMARK_KEY, HTTP_BENCHMARK_SECRET) on your Load Testing Tool
+// define('BENCHMARK_KEY', 'YOUR_BENCHMARK_KEY');
+// define('BENCHMARK_SECRET', 'YOUR_BENCHMARK_SECRET');

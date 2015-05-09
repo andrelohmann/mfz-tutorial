@@ -6,6 +6,8 @@
  */
 class HomeController extends Controller {
 	
+	public static $url_topic = 'home';
+	
 	private static $url_segment = 'home';
 	
 	private static $allowed_actions = array( 
@@ -49,7 +51,7 @@ class HomeController extends Controller {
                 "Content" => _t('Home.HOMECONTENT', 'Home.HOMECONTENT'),
                 "TourAddSearchForm" => $this->TourAddSearchForm()
             )))->renderWith(
-                array('Home_index', 'Home', 'Page', $this->stat('template_main'), 'BlankPage')
+                array('Home_index', 'Home', $this->stat('template_main'), $this->stat('template'))
             );
 	}
         
@@ -69,7 +71,7 @@ class HomeController extends Controller {
                 "Content" => _t('Home.TERMSCONTENT', 'Home.TERMSCONTENT'),
                 "Form" => ''
             )))->renderWith(
-                array('Home_terms', 'Home', 'Page', $this->stat('template_main'), 'BlankPage')
+                array('Home_terms', 'Home', $this->stat('template_main'), $this->stat('template'))
             );
 	}
 
@@ -85,7 +87,7 @@ class HomeController extends Controller {
                 "Content" => _t('Home.PRIVACYCONTENT', 'Home.PRIVACYCONTENT'),
                 "Form" => ''
             )))->renderWith(
-                array('Home_privacy', 'Home', 'Page', $this->stat('template_main'), 'BlankPage')
+                array('Home_privacy', 'Home', $this->stat('template_main'), $this->stat('template'))
             );
 	}
 
@@ -101,7 +103,7 @@ class HomeController extends Controller {
                 "Content" => _t('Home.CONTACTCONTENT', 'Home.CONTACTCONTENT'),
                 "Form" => $this->ContactForm()
             )))->renderWith(
-                array('Home_contact', 'Home', 'Page', $this->stat('template_main'), 'BlankPage')
+                array('Home_contact', 'Home', $this->stat('template_main'), $this->stat('template'))
             );
 	}
         
@@ -122,7 +124,7 @@ class HomeController extends Controller {
                 "Content" => _t('Home.IMPRINTCONTENT', 'Home.IMPRINTCONTENT'),
                 "Form" => ''
             )))->renderWith(
-                array('Home_imprint', 'Home', 'Page', $this->stat('template_main'), 'BlankPage')
+                array('Home_imprint', 'Home', $this->stat('template_main'), $this->stat('template'))
             );
 	}
 }

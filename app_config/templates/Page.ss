@@ -10,7 +10,7 @@
         $MetaTags(false)
         <%-- Bootstrap --%>
         
-        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
+        <!--link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" /-->
         
         <!-- Optional theme -->
         <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootswatch/3.3.4/paper/bootstrap.min.css" />
@@ -23,6 +23,8 @@
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
         <!-- https://useiconic.com/open/ -->
         <link href="//cdn.jsdelivr.net/open-iconic/1.1.0/font/css/open-iconic-bootstrap.min.css" rel="stylesheet" />
+        <!-- http://ionicons.com/ -->
+        <link href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" />
         
         <style type="text/css">
 
@@ -178,5 +180,23 @@
             </div>
         </nav>
         <!-- Latest compiled and minified JavaScript -->
+        <%--
+            // See the Getting Started docs for more information:
+            // http://getbootstrap.com/getting-started/#support-ie10-width
+        --%>
+        <script type="text/javascript">
+            (function () {
+                'use strict';
+                if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+                    var msViewportStyle = document.createElement('style')
+                    msViewportStyle.appendChild(
+                        document.createTextNode(
+                            '@-ms-viewport{width:auto!important}'
+                        )
+                    )
+                    document.querySelector('head').appendChild(msViewportStyle)
+                }
+            })();
+        </script>
     </body>
 </html>

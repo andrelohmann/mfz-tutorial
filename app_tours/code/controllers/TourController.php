@@ -6,6 +6,8 @@
  */
 class TourController extends Controller {
 	
+	public static $url_topic = 'tour';
+	
 	private static $url_segment = 'tour';
 	
 	private static $allowed_actions = array( 
@@ -55,7 +57,7 @@ class TourController extends Controller {
                 "Tours" => $Tours,
                 "TourSearchForm" => $this->TourSearchForm()
             )))->renderWith(
-                array('Tour_search', 'Tour', 'Page', $this->stat('template_main'), 'BlankPage')
+                array('Tour_search', 'Tour', $this->stat('template_main'), $this->stat('template'))
             );
 	}
         
